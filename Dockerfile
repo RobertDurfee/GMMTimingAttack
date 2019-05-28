@@ -9,6 +9,7 @@ RUN pip3 install \
     numpy \
     matplotlib \
     pandas \
-    scikit-learn
+    scikit-learn \
+    jupyter
 
 WORKDIR /workspace
