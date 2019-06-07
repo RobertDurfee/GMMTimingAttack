@@ -8,8 +8,8 @@ import scipy.stats
 
 PASSWORD_LENGTH = 24
 N_QUERIES = 500
-OUTLIER_THRESH = 0.025
-COMPARE_TYPE = 'SLOW'
+OUTLIER_THRESH = 0.10
+COMPARE_TYPE = 'FAST'
 
 alphabet = string.ascii_lowercase + string.ascii_uppercase + string.digits
 print(f"Alphabet: {alphabet}")
@@ -122,7 +122,7 @@ plt.plot(xx, scipy.stats.norm.pdf(xx, gmm.means_[1, 0], gmm.covariances_[1, 0, 0
 
 plt.show()
 
-correct_distribution = np.argmin(gmm.weights_)
+correct_distribution = np.argmax(gmm.means_)
 print(f"({COMPARE_TYPE}) Correct distribution: {correct_distribution}")
 
 probs = []
